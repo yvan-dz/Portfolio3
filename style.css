@@ -1,0 +1,500 @@
+/* Importation de la police moderne */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+/* Général */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    max-width: 100%;
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #212121, #424242);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.4s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ff6f61;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.navbar-nav .nav-link {
+    color: #e0e0e0;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff6f61;
+    transform: translateY(-3px);
+}
+
+/* Navbar toggle for small screens */
+.navbar .container {
+    max-width: 100%; /* Stellen Sie sicher, dass die Breite der Container voll ausgeschöpft wird */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-toggler {
+    margin-right: 0;  /* Entfernen Sie dies, wenn es vorhanden ist */
+    margin-left: 55%;    /* Stellen Sie sicher, dass der rechte Abstand nicht beeinflusst wird */
+    padding: 0.25rem 0.75rem; /* Standard-Padding für den Button */
+    position: fixed;
+
+}
+
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="white"><path d="M4 7h22M4 15h22M4 23h22"/></svg>');
+}
+
+.navbar-toggler:hover {
+    background-color: #ff3b2f;
+}
+
+
+/* Hero Section */
+.hero-section {
+    background-image: url('https://www.sbs.ox.ac.uk/sites/default/files/styles/hero/public/OXF-FIN_Image.jpg?itok=bZOE21Q7');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 220px 20px;
+    position: relative;
+    z-index: 1;
+    clip-path: ellipse(100% 70% at 50% 30%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 33, 33, 0.7);
+    z-index: -1;
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
+    }
+    100% {
+        text-shadow: 0 0 30px #ff6f61, 0 0 50px #ff6f61, 0 0 70px #ff6f61;
+    }
+}
+
+.hero-section p {
+    font-size: 1.7rem;
+    margin-bottom: 2.5rem;
+    color: #ff6f61;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-section .btn {
+    padding: 0.75rem 3rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff6f61, #ff3b2f);
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(255, 111, 97, 0.6), 0 0 30px rgba(255, 59, 47, 0.6);
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 111, 97, 0.8), 0 0 40px rgba(255, 59, 47, 0.8);
+}
+
+/* About Section */
+.about-section {
+    padding: 120px 20px;
+    background-color: #ffffff;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, #ff6f61 0%, rgba(255, 111, 97, 0) 80%);
+    opacity: 0.8;
+    z-index: -1;
+    border-radius: 50%;
+    animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.about-section img {
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+}
+
+.about-section p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #555;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
+    color: #333;
+    position: relative;
+}
+
+.skills-section::before {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    left: -70px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, #ff6f61 0%, rgba(255, 111, 97, 0) 80%);
+    opacity: 0.8;
+    z-index: -1;
+    border-radius: 50%;
+    animation: pulse 5s infinite;
+}
+
+.skills-section i {
+    color: #ff6f61;
+    margin-bottom: 25px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skills-section i:hover {
+    color: #ff3b2f;
+    transform: scale(1.3);
+}
+
+.skills-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.skills-section p {
+    font-size: 1.2rem;
+    color: #666;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 120px 20px;
+    background-color: #ffffff;
+}
+
+.projects-section .project-card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 25px;
+    position: relative;
+}
+
+.projects-section .project-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+.projects-section .project-card img {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.projects-section .project-card:hover img {
+    transform: scale(1.15);
+}
+
+.projects-section .project-card h5 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #ff6f61;
+}
+
+.projects-section .project-card p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 120px 20px;
+    background-color: #f8f8f8;
+    color: #333;
+    position: relative;
+}
+
+.experience-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle at center, #ff6f61 0%, rgba(255, 111, 97, 0) 80%);
+    opacity: 0.8;
+    z-index: -1;
+    border-radius: 50%;
+    animation: pulse 5s infinite;
+}
+
+.experience-section .timeline-item h4 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #ff6f61;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.experience-section .timeline-item h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 60px;
+    height: 2px;
+    background-color: #ff6f61;
+}
+
+.experience-section .timeline-item p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 120px 20px;
+    background-color: #ffffff;
+}
+
+.contact-section h2 {
+    margin-bottom: 2rem;
+    color: #ff6f61;
+}
+
+.contact-section p {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: #666;
+}
+
+.contact-section .form-control {
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-section .form-control:focus {
+    border-color: #ff6f61;
+    box-shadow: none;
+}
+
+.contact-section .btn {
+    padding: 0.75rem 2.5rem;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50px;
+}
+
+.contact-section .btn:hover {
+    background-color: #ff3b2f;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: #212121;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+footer p {
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+footer p a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: #ff3b2f;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.7rem;
+    }
+
+    .hero-section p {
+        font-size: 1.4rem;
+    }
+
+    .projects-section .project-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .projects-section .project-card {
+        padding: 20px;
+    }
+
+    .experience-section .timeline-item h4 {
+        font-size: 1.5rem;
+    }
+
+    .experience-section .timeline-item p {
+        font-size: 1.1rem;
+    }
+
+    .skills-section h4 {
+        font-size: 1.5rem;
+    }
+
+    .skills-section p {
+        font-size: 1rem;
+    }
+
+    .about-section p {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+    }
+
+    .about-section img {
+        width: 100%;
+    }
+}
